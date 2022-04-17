@@ -1,10 +1,12 @@
 export type OptionGroupType = 'text' | 'checkbox'
+
 export type TextOptionType = {
     id: number,
     name: string,
     type: 'text',
     value: string
 }
+
 export type CheckboxOptionType = {
     id: number,
     name: string,
@@ -31,6 +33,7 @@ export interface EquipmentsListView extends EquipmentsTable {
         value: string,
     }> | undefined
 }
+
 export type OptionsMap = {
     groupName: string
     groupType: OptionGroupType
