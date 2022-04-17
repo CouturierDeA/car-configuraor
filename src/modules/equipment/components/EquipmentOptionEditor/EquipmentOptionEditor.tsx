@@ -81,13 +81,11 @@ export const EquipmentOptionEditor = defineComponent(
                             onCancel={this.onCancelLocal}
                         />
                     </>}
-                    {!this.type && <div class="app-form-controls --right">
-                        {this.onCancel && <>
-                            <button type="button" class="app-form-control app-btn"
-                                    onClick={onCancel}>
-                                cancel
-                            </button>
-                        </>}
+                    {!this.type && this.onCancel &&  <div class="app-form-controls --right">
+                        <button type="button" class="app-form-control app-btn"
+                                onClick={onCancel}>
+                            cancel
+                        </button>
                     </div>}
                 </div>
 
