@@ -41,15 +41,15 @@ export const EquipmentOptionEditor = defineComponent(
         render() {
             return <form>
                 {this.mode === 'new' && <div class="app-form-item">
-                    <div class="app-form-controls">
-                        <div class="app-form-control">
+                    <div class="app-row">
+                        <div class="app-row-item">
                             <label>
                                 <input class="app-form-radio" type="radio" value="checkbox"
                                        v-model={this.type}/>
                                 Checkbox
                             </label>
                         </div>
-                        <div class="app-form-control">
+                        <div class="app-row-item">
                             <label>
                                 <input class="app-form-radio" type="radio" value="text"
                                        v-model={this.type}/>
@@ -58,28 +58,26 @@ export const EquipmentOptionEditor = defineComponent(
                         </div>
                     </div>
                 </div>}
-                <div class="app-form-item">
-                    {this.equipmentCheckboxOption && <>
-                        <EquipmentCheckboxOptionEditor
-                            option={this.option}
-                            mode={this.mode}
-                            onSubmit={(v) => {
-                                this.onSubmit(v)
-                            }}
-                            onCancel={() => this.onCancel && this.onCancel()}
-                        />
-                    </>}
-                    {this.equipmentTextOption && <>
-                        <EquipmentTextOptionEditor
-                            option={this.option}
-                            mode={this.mode}
-                            onSubmit={(v) => {
-                                this.onSubmit(v)
-                            }}
-                            onCancel={() => this.onCancel && this.onCancel()}
-                        />
-                    </>}
-                </div>
+                {this.equipmentCheckboxOption && <div class="app-form-item">
+                    <EquipmentCheckboxOptionEditor
+                        option={this.option}
+                        mode={this.mode}
+                        onSubmit={(v) => {
+                            this.onSubmit(v)
+                        }}
+                        onCancel={() => this.onCancel && this.onCancel()}
+                    />
+                </div>}
+                {this.equipmentTextOption && <div class="app-form-item">
+                    <EquipmentTextOptionEditor
+                        option={this.option}
+                        mode={this.mode}
+                        onSubmit={(v) => {
+                            this.onSubmit(v)
+                        }}
+                        onCancel={() => this.onCancel && this.onCancel()}
+                    />
+                </div>}
             </form>
         }
     }

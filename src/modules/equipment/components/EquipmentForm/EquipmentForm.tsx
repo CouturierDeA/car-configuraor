@@ -66,6 +66,9 @@ export const EquipmentForm = defineComponent(
                 } else {
                     so[groupName] = undefined
                 }
+            },
+            toggleAddOptionMode(mode: 'new' | 'edit' | null) {
+                this.addOptionMode = mode
             }
         },
         render() {
@@ -101,9 +104,7 @@ export const EquipmentForm = defineComponent(
                     <div class="app-form-controls --right">
                         <button class="app-form-control app-btn --outline-success"
                                 type="button"
-                                onClick={() => {
-                                    this.addOptionMode = 'new';
-                                }}>
+                                onClick={() => this.toggleAddOptionMode('new')}>
                             add new option
                         </button>
                         <button disabled={this.formInvalid} class="app-form-control app-btn --success"
@@ -119,10 +120,10 @@ export const EquipmentForm = defineComponent(
                         mode={this.addOptionMode}
                         onSubmit={(v) => {
                             this.addOption(v)
-                            this.addOptionMode = null;
+                            this.toggleAddOptionMode(null)
                             this.option = undefined
                         }}
-                        onCancel={() => this.addOptionMode = null}
+                        onCancel={() => this.toggleAddOptionMode(null)}
                     />
                 </>}
             </>

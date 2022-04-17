@@ -58,8 +58,10 @@ export function setup(es: IEquipmentsService) {
                 }
             },
             async mounted() {
-                await this.readEquipments()
-                await this.readOptions()
+                await Promise.all([
+                    this.readEquipments(),
+                    this.readOptions()
+                ])
             },
             computed: {
                 equipmentsListView(): EquipmentsListView[] {
