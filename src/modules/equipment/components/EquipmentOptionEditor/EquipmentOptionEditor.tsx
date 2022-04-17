@@ -69,9 +69,7 @@ export const EquipmentOptionEditor = defineComponent(
                         <EquipmentCheckboxOptionEditor
                             option={this.option}
                             mode={this.mode}
-                            onSubmit={(v) => {
-                                this.onSubmit(v)
-                            }}
+                            onSubmit={this.onSubmit}
                             onCancel={this.onCancelLocal}
                         />
                     </>}
@@ -79,9 +77,7 @@ export const EquipmentOptionEditor = defineComponent(
                         <EquipmentTextOptionEditor
                             option={this.option}
                             mode={this.mode}
-                            onSubmit={(v) => {
-                                this.onSubmit(v)
-                            }}
+                            onSubmit={this.onSubmit}
                             onCancel={this.onCancelLocal}
                         />
                     </>}
