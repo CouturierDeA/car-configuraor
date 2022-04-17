@@ -31,7 +31,7 @@ export interface EquipmentsListView extends EquipmentsTable {
         name: string,
         type: OptionGroupType,
         value: string,
-    }> | undefined
+    }>
 }
 
 export type OptionsMap = {
