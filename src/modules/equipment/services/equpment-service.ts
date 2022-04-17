@@ -68,6 +68,7 @@ export class EquipmentsService {
         {id: 20, name: 'discs', type: 'text', value: '120'},
         {id: 21, name: 'lettering on the hood', type: 'text', value: 'Hej Romale, hej Чавалэ'},
     ]
+
     private static equipmentsTable: EquipmentsTable[] = [
         {
             id: 1,
@@ -112,7 +113,7 @@ export class EquipmentsService {
             id: 5,
             name: 'Gypsy Style',
             selectedOptions: {
-                engine:  17,
+                engine: 17,
                 finishing: 18,
                 color: 19,
                 discs: 20,

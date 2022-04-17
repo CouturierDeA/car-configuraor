@@ -67,7 +67,7 @@ export const EquipmentForm = defineComponent(
                     so[groupName] = undefined
                 }
             },
-            toggleAddOptionMode(mode: 'new' | 'edit' | null){
+            toggleAddOptionMode(mode: 'new' | 'edit' | null) {
                 this.addOptionMode = mode
             }
         },

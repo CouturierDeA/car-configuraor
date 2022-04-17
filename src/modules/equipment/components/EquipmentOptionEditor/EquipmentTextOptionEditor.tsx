@@ -25,7 +25,7 @@ export const EquipmentTextOptionEditor = defineComponent(
                     {invalid: this.value.length < 1, message: 'Option value min length is 1'}
                 ].find(err => err.invalid)?.message
             },
-            formIsInvalid(){
+            formIsInvalid() {
                 return [this.nameError, this.valueError].some(Boolean)
             }
         },
