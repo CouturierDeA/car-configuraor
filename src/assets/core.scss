@@ -1,0 +1,75 @@
+
+$bg-success-tinny: rgba(54, 173, 57, .1);
+$text-muted: #6c757d;
+$bg-muted: #6c757d; // Неактивные кнопки иконки
+$red: #eb5757;
+$successDark: #348E36;
+$success: #36ad39;
+$loader-color: lighten($success, 7);
+$text-color: #333333;
+$body-color: white;
+$--test-var: $red;
+$--body-bg: $body-color;
+$--text-danger: #{$red};
+$--text-warning: #FF9F00;
+$--bg-warning: #ffc107;
+$--bg-warning-hover: #{darken(#f5c73e, 12)};
+$--bg-danger: $red;
+$--bg-success: $success;
+$--body-bg-hover: #e1e1e1;
+$--text-color: #333333;
+$--text-success: #{$success};
+$--text-muted: #6c757d;
+$--text-color-opposite: $body-color;
+$--text-color-secondary: #777;
+$--body-bg-tiny: rgba(0, 0, 0, .09);
+$--body-bg-success: $success;
+$--border-color: gray;
+$--link-color: #15559A;
+$--box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+$--border-color-light: #eaeaea;
+$--divider-color: rgba(141, 141, 141, .26);
+$--border-color-hover: $--text-color;
+$--bg-danger-light: #FFE6E5;
+$--bg-warning-light: #EBF7EC;
+$--bg-success-light: #EBF7EC;
+$--text-muted-opposite: $body-color;
+$--text-muted: #6c757d;
+$--border-muted: #6c757d;
+$--border-muted-light: #D0D0D0;
+$--bg-muted: #6c757d;
+$--bg-muted-light: #D0D0D0;
+
+
+$text-blue: #31708f;
+$text-blue2: #15559A;
+$bg-blue-tiny: rgba(0, 108, 224, 0.1);
+$border-black: rgba(0, 0, 0, 0.2);
+$border-black-02: rgba(0, 0, 0, 0.2);
+$text-black-black-06: rgba(0, 0, 0, 0.6);
+$text-black-black-05: rgba(0, 0, 0, 0.5);
+$text-black-09: rgba(0, 0, 0, 0.9); // Основной текст, фокусный при нажатии (90%)
+//$text-black: rgba(0, 0, 0, 0.8); // Основной текст, фокусный при нажатии (80%)
+
+
+$fs-11: .6875rem;
+$fs-12: .75rem;
+$fs-13: .875rem;
+$fs-14: .9rem;
+$fs-15: .92rem;
+$fs-16: 1rem;
+$fs-17: 1.04rem;
+$fs-18: 1.13rem;
+$fs-19: 1.125rem;
+$fs-20: 1.25rem;
+$fs-21: 1.3125rem;
+$fs-22: 1.375rem;
+$fs-24: 1.5rem;
+$fs-30: 1.875rem;
+$fs-36: 2.25rem;
+
+$transition-base: ease-in-out;
+$transition: .2s ease-in-out;
+$transition-core: $transition;
+$border-radius: 3px;
+$content-width: 1440px;
