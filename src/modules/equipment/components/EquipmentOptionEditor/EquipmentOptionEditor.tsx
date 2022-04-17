@@ -33,12 +33,18 @@ export const EquipmentOptionEditor = defineComponent(
                 return this.type === 'checkbox'
             },
         },
-        data(){
+        methods: {
+            onCancelLocal() {
+                this.onCancel && this.onCancel()
+            }
+        },
+        data() {
             return {
                 type: this.option?.type
             }
         },
         render() {
+            const {onCancel} = this;
             return <form>
                 {this.mode === 'new' && <div class="app-form-item">
                     <div class="app-row">
@@ -58,26 +64,37 @@ export const EquipmentOptionEditor = defineComponent(
                         </div>
                     </div>
                 </div>}
-                {this.equipmentCheckboxOption && <div class="app-form-item">
-                    <EquipmentCheckboxOptionEditor
-                        option={this.option}
-                        mode={this.mode}
-                        onSubmit={(v) => {
-                            this.onSubmit(v)
-                        }}
-                        onCancel={() => this.onCancel && this.onCancel()}
-                    />
-                </div>}
-                {this.equipmentTextOption && <div class="app-form-item">
-                    <EquipmentTextOptionEditor
-                        option={this.option}
-                        mode={this.mode}
-                        onSubmit={(v) => {
-                            this.onSubmit(v)
-                        }}
-                        onCancel={() => this.onCancel && this.onCancel()}
-                    />
-                </div>}
+                <div class="app-form-item">
+                    {this.equipmentCheckboxOption && <>
+                        <EquipmentCheckboxOptionEditor
+                            option={this.option}
+                            mode={this.mode}
+                            onSubmit={(v) => {
+                                this.onSubmit(v)
+                            }}
+                            onCancel={this.onCancelLocal}
+                        />
+                    </>}
+                    {this.equipmentTextOption && <>
+                        <EquipmentTextOptionEditor
+                            option={this.option}
+                            mode={this.mode}
+                            onSubmit={(v) => {
+                                this.onSubmit(v)
+                            }}
+                            onCancel={this.onCancelLocal}
+                        />
+                    </>}
+                    {!this.type && <div class="app-form-controls --right">
+                        {this.onCancel && <>
+                            <button type="button" class="app-form-control app-btn"
+                                    onClick={onCancel}>
+                                cancel
+                            </button>
+                        </>}
+                    </div>}
+                </div>
+
             </form>
         }
     }
