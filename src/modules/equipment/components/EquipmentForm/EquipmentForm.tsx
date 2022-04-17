@@ -1,6 +1,6 @@
 import {defineComponent, PropType} from "vue";
 import {
-    EquipmentsTable,
+    EquipmentsTable, OptionPayload,
     OptionsMap,
     OptionType,
 } from "@/modules/equipment/domain/domain";
@@ -30,11 +30,7 @@ export const EquipmentForm = defineComponent(
         data() {
             return {
                 addOptionMode: null as null | 'new' | 'edit',
-                option: {
-                    name: '',
-                    value: '',
-                    type: 'text',
-                } as Omit<OptionType, 'id'>
+                option: undefined as OptionPayload | undefined
             }
         },
         computed: {
@@ -124,6 +120,7 @@ export const EquipmentForm = defineComponent(
                         onSubmit={(v) => {
                             this.addOption(v)
                             this.addOptionMode = null;
+                            this.option = undefined
                         }}
                         onCancel={() => this.addOptionMode = null}
                     />

@@ -24,6 +24,9 @@ export function setup(es: IEquipmentsService) {
                 }
             },
             methods: {
+                closeDialog() {
+                    this.equipmentDialogOpened = false
+                },
                 async addOption(opt: OptionPayload) {
                     await es.addOption(opt)
                     await this.readOptions()
@@ -51,7 +54,7 @@ export function setup(es: IEquipmentsService) {
                         ...eq,
                     })
                     await this.readEquipments()
-                    this.equipmentDialogOpened = false
+                    this.closeDialog()
                 }
             },
             async mounted() {
@@ -77,7 +80,7 @@ export function setup(es: IEquipmentsService) {
                         </button>
                     </div>
                     <Dialog visible={this.equipmentDialogOpened}
-                            onClose={() => this.equipmentDialogOpened = false}
+                            onClose={this.closeDialog}
                     >
                         {!!this.equipmentOnEdit && <>
                             <EquipmentForm
